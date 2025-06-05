@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ mobileMenuOpen: false }" xmlns:x="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutela Impresa</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/alpinejs" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1 span.serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .fade-up {
+      animation: fadeUp 1.2s ease-out both;
+    }
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .abstract-icon {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      fill: rgba(255, 255, 255, 0.1);
+      z-index: 0;
+      animation: floatIcons 20s ease-in-out infinite;
+    }
+    .abstract-icon-1 {
+      top: 10%;
+      left: 5%;
+    }
+    .abstract-icon-2 {
+      bottom: 5%;
+      right: 10%;
+    }
+    @keyframes floatIcons {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-30px) rotate(10deg);
+      }
+    }
+    nav a {
+      transition: all 0.3s ease-in-out;
+    }
+    nav a:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-img {
+  transition: transform 0.6s ease-in-out;
+  will-change: transform;
+}
+
+.hero-img:hover {
+  transform: scale(1.08) rotate(0deg);
+}
+
+
+  </style>
+</head>
+<body class="text-white bg-[#AF222A] overflow-x-hidden relative">
+  <div class="absolute inset-0 z-0 opacity-[0.04] bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] bg-repeat pointer-events-none"></div>
+
+  <header class="sticky top-0 z-50 bg-[#AF222A]/90 backdrop-blur-md border-b border-white/10 shadow-lg">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="/images/tutela-logo.png" alt="Tutela Impresa" class="h-10">
+        <span class="text-xl font-bold tracking-wide uppercase text-white"></span>
+      </div>
+      <div class="md:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-white focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      <nav class="hidden md:flex gap-4 text-sm tracking-wide">
+        <a href="/index.html" class="px-4 py-2 rounded-lg bg-white/10 text-white hover:text-[#FFDDE0]">🏠 Home</a>
+        <a href="/consultation.html" class="px-4 py-2 rounded-lg bg-white/10 text-white hover:text-[#FFDDE0]">👤 Consultation</a>
+        <a href="/assistance.html" class="px-4 py-2 rounded-lg bg-white/10 text-white hover:text-[#FFDDE0]">🆘 Assistance</a>
+        <a href="/register.html" class="px-4 py-2 rounded-lg bg-white/10 text-white hover:text-[#FFDDE0]">📝 Register</a>
+        <a href="/signin.html" class="px-4 py-2 rounded-lg bg-white/10 text-white hover:text-[#FFDDE0]">🔐 Sign In</a>
+      </nav>
+    </div>
+    <div x-show="mobileMenuOpen" class="md:hidden px-6 pt-2 pb-4 flex flex-col gap-2 bg-[#AF222A]">
+      <a href="/index.html" class="block px-4 py-2 rounded-lg bg-white/10 text-white">🏠 Home</a>
+      <a href="/consultation.html" class="block px-4 py-2 rounded-lg bg-white/10 text-white">👤 Consultation</a>
+      <a href="/assistance.html" class="block px-4 py-2 rounded-lg bg-white/10 text-white">🆘 Assistance</a>
+      <a href="/register.html" class="block px-4 py-2 rounded-lg bg-white/10 text-white">📝 Register</a>
+      <a href="/signin.html" class="block px-4 py-2 rounded-lg bg-white/10 text-white">🔐 Sign In</a>
+    </div>
+  </header>
+
+  <section class="relative min-h-screen flex flex-col justify-center items-center text-center md:text-left md:flex-row overflow-hidden">
+    <svg class="abstract-icon abstract-icon-1" viewBox="0 0 64 64"><path d="M32 0l32 16v32L32 64 0 48V16z" /></svg>
+    <svg class="abstract-icon abstract-icon-2" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" /></svg>
+
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-10 items-center relative z-10 py-20 md:py-28">
+      <div class="md:col-span-7 fade-up">
+        <p class="text-sm uppercase tracking-widest text-white/70 mb-4">Consulting & Safety</p>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-tight text-white tracking-tight mb-6">
+          <span class="block serif text-white">More than consulting,</span>
+          <span class="block serif text-[#FFDDE0]">a strategic impact.</span>
+        </h1>
+        <div class="h-1 w-20 bg-white mb-6 mx-auto md:mx-0"></div>
+        <p class="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed mb-4 max-w-xl mx-auto md:mx-0">
+          For entrepreneurs, freelancers, and business owners who want to grow — without risking fines, shutdowns, or missed certifications.
+        </p>
+        <p class="text-sm text-white/70 mb-6">⚡ Get a reply within 24h • ✅ No commitment required</p>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start mb-8">
+          <a href="#contatti" class="px-10 py-4 rounded-full font-semibold text-lg bg-white text-[#AF222A] shadow-[0_0_0_4px_rgba(255,255,255,0.2)] hover:shadow-xl hover:scale-105 transition-all duration-300">📞 Request Info</a>
+          <a href="#servizi" class="px-10 py-4 rounded-full font-semibold text-lg text-white border-2 border-white hover:bg-white hover:text-[#AF222A] hover:scale-105 transition-all duration-300">Explore Services</a>
+        </div>
+      </div>
+      <div class="md:col-span-5 md:flex justify-center hidden fade-up">
+        <div class="relative w-full max-w-md transform -rotate-2 scale-105">
+          <img src="/images/Untitled design (19).png" alt="Safety Expert" class="hero-img relative rounded-[36px] shadow-[0_20px_80px_rgba(0,0,0,0.5)] w-full z-10">
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+<!-- About Section -->
+<section id="about" class="relative text-[#AF222A] py-28 overflow-hidden bg-white">
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute top-10 left-10 w-96 h-96 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-60 h-60 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-16 items-center relative z-10">
+    <div class="fade-up">
+      <p class="text-sm uppercase tracking-[0.2em] text-[#AF222A]/70 mb-4">About Us</p>
+      <h2 class="text-5xl font-serif font-bold leading-tight mb-6 text-[#AF222A]">Welcome Entrepreneurs</h2>
+      <p class="text-lg leading-relaxed mb-8 text-gray-700 max-w-xl">
+        At <strong>Tutela Impresa</strong>, we help <strong>entrepreneurs, freelancers, traders, restaurateurs, and employers</strong> ensure safety and legal compliance — without stress, confusion, or risking their business.
+        <br><br>
+        We combine <strong>legal mastery</strong> and <strong>business clarity</strong> to give you total peace of mind: your documents, certifications, and deadlines — all managed for you.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl">📘</div>
+          <div>
+            <p class="font-semibold text-lg">Legal Mastery</p>
+            <p class="text-sm text-gray-600">Deep knowledge of Italian labor law — applied with precision.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl">🚀</div>
+          <div>
+            <p class="font-semibold text-lg">Strategic Guidance</p>
+            <p class="text-sm text-gray-600">We build systems for growth — not for bureaucracy.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl">🧩</div>
+          <div>
+            <p class="font-semibold text-lg">Tailored Audits</p>
+            <p class="text-sm text-gray-600">Every business is different — our plans reflect that.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <div class="text-3xl">🌍</div>
+          <div>
+            <p class="font-semibold text-lg">People First</p>
+            <p class="text-sm text-gray-600">Transparent, proactive support with a human touch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="relative fade-up">
+      <div class="relative w-full h-full">
+        <div class="absolute -inset-3 bg-[#AF222A]/10 rounded-[2rem] transform rotate-3 z-0"></div>
+        <img src="/images/Untitled design (20).png" alt="About Us" class="relative rounded-[2rem] shadow-2xl z-10 glow-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="burden" class="relative py-32 bg-[#AF222A] text-white overflow-hidden">
+  <!-- Background Icons -->
+  <svg class="abstract-icon abstract-icon-1" viewBox="0 0 64 64"><path d="M32 0l32 16v32L32 64 0 48V16z" /></svg>
+  <svg class="abstract-icon abstract-icon-2" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" /></svg>
+
+  <!-- Content Container -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 text-center">
+    <p class="text-sm uppercase tracking-[0.2em] text-white/70 mb-4">Compliance & Risk</p>
+    <h2 class="text-5xl font-serif font-bold leading-tight mb-6">
+  Your Company May Be at Risk ,<br> <span class="text-[#FFDDE0]">Without Even Knowing It</span>
+</h2>
+    <p class="text-lg leading-relaxed text-white/90 max-w-2xl mx-auto mb-16">
+      Most entrepreneurs don’t realize that safety compliance isn’t optional. It’s the law — and one expired certificate could shut everything down.
+    </p>
+
+    <!-- Cards Section -->
+    <div class="grid md:grid-cols-3 gap-10 text-left max-w-6xl mx-auto mb-16">
+      <div class="bg-white/10 border border-white/10 backdrop-blur-md rounded-[30px] p-6 shadow-xl transition hover:scale-105">
+        <div class="text-3xl mb-4">📄</div>
+        <p class="font-semibold text-lg mb-2 text-white">Mandatory Certifications</p>
+        <p class="text-sm text-white/80">Industries require safety docs by law — yet many miss one without knowing it.</p>
+      </div>
+      <div class="bg-white/10 border border-white/10 backdrop-blur-md rounded-[30px] p-6 shadow-xl transition hover:scale-105">
+        <div class="text-3xl mb-4">⏳</div>
+        <p class="font-semibold text-lg mb-2 text-white">Ignored Deadlines</p>
+        <p class="text-sm text-white/80">Renewals are forgotten. No alerts. Suddenly, you're out of compliance.</p>
+      </div>
+      <div class="bg-white/10 border border-white/10 backdrop-blur-md rounded-[30px] p-6 shadow-xl transition hover:scale-105">
+        <div class="text-3xl mb-4">⚖️</div>
+        <p class="font-semibold text-lg mb-2 text-white">Legal Risk is Personal</p>
+        <p class="text-sm text-white/80">You—not your accountant—are liable if documentation fails inspection.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <a href="#request" class="inline-block px-10 py-4 rounded-full font-semibold text-lg bg-white text-[#AF222A] shadow-[0_0_0_4px_rgba(255,255,255,0.2)] hover:shadow-xl hover:scale-105 transition-all duration-300">
+      📞 Discover how protected your business really is
+    </a>
+    <p class="mt-4 text-sm text-white/70">📊 78% of businesses are already non-compliant — and don’t know it.</p>
+  </div>
+</section>
+
+
+<!-- Following sections go here -->
+
+
+<section id="safety-ignored" class="relative py-36 bg-white text-[#2D2D2D] overflow-hidden">
+  <!-- Grid Background with Premium Enhancements -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute top-10 left-10 w-96 h-96 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-60 h-60 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+  </div>
+
+  <!-- Smart Premium Layout -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <p class="text-sm uppercase tracking-[0.2em] text-[#AF222A]/70 mb-2">Startup Oversight</p>
+      <h2 class="text-5xl font-serif font-bold leading-tight text-[#AF222A] mb-4">
+        Why Safety Gets Ignored — <br><span class="text-[#2D2D2D]">Until It’s Too Late</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-xl mx-auto">Many startups skip safety until it's too late — exposing themselves to serious legal risks.</p>
+    </div>
+
+    <div class="relative flex flex-col items-center space-y-10">
+      <!-- Visual Excuses Cluster -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full">
+        <div class="bg-[#FFF5F6] px-6 py-5 rounded-3xl shadow-xl rotate-[-3deg]">
+          <p class="text-[#AF222A] font-bold">“We’ll do it later.”</p>
+          <p class="text-sm text-gray-600">Feels optional — until it’s urgent.</p>
+        </div>
+        <div class="bg-[#FFF5F6] px-6 py-5 rounded-3xl shadow-xl rotate-1">
+          <p class="text-[#AF222A] font-bold">“That’s for big companies.”</p>
+          <p class="text-sm text-gray-600">Even small startups carry legal risk.</p>
+        </div>
+        <div class="bg-[#FFF5F6] px-6 py-5 rounded-3xl shadow-xl rotate-[2deg]">
+          <p class="text-[#AF222A] font-bold">“Nobody told me I needed it.”</p>
+          <p class="text-sm text-gray-600">75% of founders miss safety documents entirely.</p>
+        </div>
+      </div>
+
+      <!-- Visual + Stat Blend -->
+      <div class="relative flex flex-col sm:flex-row gap-10 items-center justify-center w-full mt-6">
+        <div class="relative w-72 h-72 rounded-full overflow-hidden shadow-2xl border-[6px] border-white">
+          <img src="/images/u (10).png" alt="Founder" class="object-cover w-full h-full">
+        </div>
+        <div class="max-w-sm text-center sm:text-left">
+          <div class="text-3xl font-bold text-[#AF222A] mb-2">75%</div>
+          <p class="text-gray-700 text-md leading-relaxed">
+            of small business owners are unaware of required compliance — until an inspection, a fine, or a legal event forces them to act.
+          </p>
+        </div>
+      </div>
+
+      <a href="#audit" class="inline-block mt-12 px-10 py-4 bg-[#AF222A] text-white font-semibold rounded-full shadow-lg hover:bg-[#911a22] transition">
+        Check Your Safety Now →
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<section id="noncompliance-cost" class="relative py-36 bg-[#AF222A] text-white overflow-hidden">
+  <!-- Abstract Background Enhancements -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute top-0 left-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="angleGrid" width="80" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <path d="M 80 0 L 0 0 0 80" fill="none" stroke="white" stroke-width="0.5" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#angleGrid)" />
+    </svg>
+    <div class="absolute top-10 right-10 w-96 h-96 bg-white/5 rounded-full blur-[140px] animate-pulse"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-white/10 rounded-full blur-[100px] animate-pulse"></div>
+    <!-- Additional Floating Shapes -->
+    <svg class="absolute bottom-20 right-1/4 w-20 h-20 opacity-10 animate-float-slow" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" stroke="white" stroke-width="2" />
+    </svg>
+    <svg class="absolute top-16 left-1/3 w-16 h-16 opacity-10 animate-float-slow" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="8" width="48" height="48" stroke="white" stroke-width="2" rx="8" />
+    </svg>
+    <style>
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      .animate-float-slow {
+        animation: floatSlow 10s ease-in-out infinite;
+      }
+    </style>
+  </div>
+
+  <!-- Content Block -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+    <p class="text-sm uppercase tracking-[0.2em] text-[#FFDDE0]/70 mb-3">Legal Consequences</p>
+    <h2 class="text-5xl font-serif font-bold leading-tight mb-6">
+      The Real Cost of <span class="text-[#FFDDE0]">Non-Compliance</span>
+    </h2>
+    <p class="text-lg text-white/90 mb-12 max-w-2xl mx-auto">
+      When a business overlooks safety regulations, the consequences aren’t just theoretical. These are the four most common outcomes companies face.
+    </p>
+
+    <!-- Risk Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6 mb-12 text-sm text-center">
+      <div class="bg-white/10 hover:bg-white/20 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 p-6 rounded-3xl backdrop-blur-md shadow-xl">
+        <div class="text-4xl mb-3">💸</div>
+        <p class="text-lg font-semibold">Fines</p>
+        <p class="text-xs text-white/80 mt-2">Even minor violations can cost thousands in penalties.</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/20 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 p-6 rounded-3xl backdrop-blur-md shadow-xl">
+        <div class="text-4xl mb-3">🚫</div>
+        <p class="text-lg font-semibold">Business Closure</p>
+        <p class="text-xs text-white/80 mt-2">Repeated violations can result in forced shutdowns.</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/20 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 p-6 rounded-3xl backdrop-blur-md shadow-xl">
+        <div class="text-4xl mb-3">⚖️</div>
+        <p class="text-lg font-semibold">Legal Liability</p>
+        <p class="text-xs text-white/80 mt-2">You are personally accountable for compliance failures.</p>
+      </div>
+      <div class="bg-white/10 hover:bg-white/20 transform hover:-translate-y-2 hover:scale-105 transition-all duration-500 p-6 rounded-3xl backdrop-blur-md shadow-xl">
+        <div class="text-4xl mb-3">📉</div>
+        <p class="text-lg font-semibold">Insurance Void</p>
+        <p class="text-xs text-white/80 mt-2">Missing documents often lead to denied claims.</p>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="#register" class="inline-block px-10 py-4 rounded-full font-semibold text-lg bg-white text-[#AF222A] shadow-[0_0_0_4px_rgba(255,255,255,0.2)] hover:shadow-xl hover:scale-105 transition-all duration-300">
+      🔐 Protect Your Business Now
+    </a>
+  </div>
+</section>
+
+
+
+
+
+<!-- "All Legal Responsibility Falls on You" Section -->
+<section id="legal-responsibility" class="relative py-24 bg-white text-[#AF222A] overflow-hidden">
+  <!-- Grid Background + Floating Blobs -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="legalGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#legalGrid)" />
+    </svg>
+    <div class="absolute top-12 left-12 w-72 h-72 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-12 right-12 w-56 h-56 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+    <svg class="absolute top-1/3 left-1/4 w-16 h-16 opacity-10 animate-float-slow" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#AF222A" stroke-width="1" />
+    </svg>
+    <style>
+      @keyframes floatSlow { 0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);} }
+      .animate-float-slow { animation: floatSlow 12s ease-in-out infinite; }
+    </style>
+  </div>
+
+  <!-- Centered Card -->
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10 mt-6">
+    <div class="bg-[#FFF0F2] border-l-4 border-[#AF222A] rounded-3xl shadow-2xl px-8 py-10 transform hover:scale-[1.02] transition-transform duration-300">
+      <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">All Legal Responsibility Falls on You</h2>
+      <p class="text-base md:text-lg text-[#2D2D2D] mb-6">
+        Every document you sign? You’re accountable. Every missed safety requirement? It’s on you. Compliance isn’t shared—it’s owned.
+      </p>
+      <a href="#legal-protection" class="inline-block px-8 py-3 bg-[#AF222A] text-white font-semibold rounded-full shadow hover:bg-[#911a22] transition-all duration-300">
+        How to protect yourself legally
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Classy Thin Dashed Divider -->
+<svg class="w-full" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,100 L1440,0 L1440,100 Z" fill="#ffffff" /></svg>
+
+<!-- "We’ll Take Over Your Safety Headaches" Section -->
+<section id="business-protection" class="relative pt-16 pb-32 bg-white text-[#AF222A] overflow-hidden">
+  <!-- Matching Grid Background + Animated Icon -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="protectionGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#protectionGrid)" />
+    </svg>
+    <div class="absolute top-12 right-12 w-80 h-80 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-12 left-12 w-64 h-64 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+    <svg class="absolute top-1/3 right-1/4 w-24 h-24 opacity-10 animate-float-slow" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#AF222A" stroke-width="1" />
+    </svg>
+    <style>
+      @keyframes floatSlow { 0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
+      .animate-float-slow { animation: floatSlow 12s ease-in-out infinite; }
+    </style>
+  </div>
+
+  <!-- Content Block -->
+  <div class="max-w-7xl mx-auto px-6 md:px-12 text-center relative z-10">
+    <p class="text-sm uppercase tracking-widest text-[#AF222A]/80 mb-3">100% Covered</p>
+    <h2 class="text-5xl font-serif font-bold mb-6 leading-tight">We’ll Take Over Your Safety Headaches</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
+      From documentation to legal updates, we manage it all—so you stay compliant, confident, and focused on your business.
+    </p>
+
+    <!-- Features Grid -->
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mb-14">
+      <div class="bg-white border border-[#AF222A]/10 p-6 rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 hover:scale-[1.04] transition-all duration-500 ease-in-out">
+        <div class="text-3xl mb-3">📄</div>
+        <h3 class="font-semibold text-lg mb-1">Document Tracking</h3>
+        <p class="text-sm text-gray-600">We monitor your compliance files so you never miss a deadline.</p>
+      </div>
+      <div class="bg-white border border-[#AF222A]/10 p-6 rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 hover:scale-[1.04] transition-all duration-500 ease-in-out">
+        <div class="text-3xl mb-3">🔍</div>
+        <h3 class="font-semibold text-lg mb-1">Certificate Analysis</h3>
+        <p class="text-sm text-gray-600">We review and verify your certifications to ensure full coverage.</p>
+      </div>
+      <div class="bg-white border border-[#AF222A]/10 p-6 rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 hover:scale-[1.04] transition-all duration-500 ease-in-out">
+        <div class="text-3xl mb-3">⏰</div>
+        <h3 class="font-semibold text-lg mb-1">Deadline Reminders</h3>
+        <p class="text-sm text-gray-600">We’ll notify you before anything expires—proactive, not reactive.</p>
+      </div>
+      <div class="bg-white border border-[#AF222A]/10 p-6 rounded-3xl shadow-xl hover:shadow-2xl transform hover:-translate-y-2 hover:scale-[1.04] transition-all duration-500 ease-in-out">
+        <div class="text-3xl mb-3">📢</div>
+        <h3 class="font-semibold text-lg mb-1">Legal Updates</h3>
+        <p class="text-sm text-gray-600">We stay on top of changes so your business never falls behind.</p>
+      </div>
+    </div>
+
+    <!-- CTA Button -->
+    <a href="#register" class="inline-block px-10 py-4 rounded-full font-semibold text-lg bg-[#AF222A] text-white shadow-[0_0_0_5px_rgba(175,34,42,0.2)] hover:shadow-xl hover:scale-105 transition-all duration-300">
+      ✨ Let’s Get Started
+    </a>
+  </div>
+</section>
+
+
+
+
+<svg class="w-full" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,100 L1440,0 L1440,100 Z" fill="#ffffff" /></svg>
+
+
+<!-- "Platform Features" Section: with angled separator at top -->
+<section id="platform-features" class="relative bg-white text-[#2D2D2D] overflow-hidden">
+  <!-- Angled Top Separator -->
+  <svg class="w-full" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,100 L1440,0 L1440,100 Z" fill="#ffffff" /></svg>
+
+  <!-- Grid Background + Floating Shapes -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="featuresGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#featuresGrid)" />
+    </svg>
+    <div class="absolute top-10 right-10 w-80 h-80 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-10 left-10 w-64 h-64 bg-[#AF222A]/8 rounded-full blur-[100px] animate-pulse"></div>
+    <svg class="absolute top-1/2 left-1/4 w-20 h-20 opacity-10 animate-float-slow" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" stroke="#AF222A" stroke-width="1" />
+    </svg>
+  </div>
+  <style>
+    @keyframes floatSlow {0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);} }
+    .animate-float-slow { animation: floatSlow 12s ease-in-out infinite; }
+  </style>
+
+  <!-- Content -->
+  <div class="max-w-7xl mx-auto px-6 py-24 relative z-10">
+    <h2 class="text-4xl font-serif font-extrabold text-center mb-12 text-[#AF222A]">A Platform Built by Entrepreneurs, for Entrepreneurs</h2>
+    <!-- Enhanced Grid Layout -->
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <!-- Card 1 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <!-- Abstract shape behind icon -->
+        <div class="absolute -top-6 -left-6 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">☁️</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Cloud Technology</h3>
+          <p class="text-sm text-gray-600 text-center">Access data anytime from anywhere.</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute -top-6 -right-6 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">🔐</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Top Security</h3>
+          <p class="text-sm text-gray-600 text-center">Encrypted SSL protection on all data.</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute bottom-0 left-1/4 w-20 h-20 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">👨‍💼</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Expert Support</h3>
+          <p class="text-sm text-gray-600 text-center">Talk to professionals anytime you need.</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute bottom-0 right-1/4 w-20 h-20 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">📊</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Reports</h3>
+          <p class="text-sm text-gray-600 text-center">Track everything with custom dashboards.</p>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute top-1/3 left-0 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">📁</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Digital Docs</h3>
+          <p class="text-sm text-gray-600 text-center">Store all your compliance materials online.</p>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute bottom-1/4 right-0 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">🎓</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Learning Center</h3>
+          <p class="text-sm text-gray-600 text-center">Webinars, courses and guides included.</p>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute top-0 right-1/4 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">🧭</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Easy Navigation</h3>
+          <p class="text-sm text-gray-600 text-center">User-friendly interface designed for speed.</p>
+        </div>
+      </div>
+      <!-- Card 8 -->
+      <div class="relative bg-white border border-[#AF222A]/10 p-8 rounded-3xl shadow-md hover:shadow-2xl transform hover:-translate-y-1 hover:scale-[1.02] transition-all duration-300 overflow-hidden">
+        <div class="absolute bottom-0 left-1/4 w-24 h-24 bg-[#AF222A]/5 rounded-full blur-3xl"></div>
+        <div class="relative flex flex-col items-center">
+          <div class="w-14 h-14 bg-[#FFDDE0] rounded-full flex items-center justify-center mb-4">
+            <p class="text-2xl">📬</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-[#AF222A]">Auto Alerts</h3>
+          <p class="text-sm text-gray-600 text-center">Get alerts before anything expires.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Angled Bottom Separator -->
+  <svg class="w-full absolute bottom-0" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,0 L1440,100 L0,100 Z" fill="#ffffff" /></svg>
+</section>
+  <svg class="w-full absolute bottom-0" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,0 L1440,100 L0,100 Z" fill="#ffffff" /></svg>
+</section>
+
+<!-- "Pricing Teaser" Section: with polygon background overlay -->
+<section id="pricing" class="relative py-24 bg-[#AF222A] text-white overflow-hidden">
+  <!-- Polygon Accent in Background -->
+  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 800 600" preserveAspectRatio="xMinYMin slice">
+    <polygon points="0,300 400,0 800,300 800,600 0,600" fill="#AB1D23" opacity="0.6"/>
+  </svg>
+  <!-- Floating Circles -->
+  <div class="absolute inset-0 z-0">
+    <canvas id="pricingCanvas" class="absolute inset-0 w-full h-full"></canvas>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-xl mx-auto px-6 relative z-10 text-center">
+    <img src="https://cdn-icons-png.flaticon.com/512/685/685329.png" class="w-20 mx-auto mb-6" alt="Cappuccino">
+    <h2 class="text-4xl font-serif font-extrabold mb-4">Business Protection for the Price of a Cappuccino</h2>
+    <p class="text-lg mb-8">Protect your business daily — at less than the cost of your morning coffee.</p>
+    <a href="#" class="inline-block px-6 py-3 bg-white text-[#AF222A] font-semibold rounded-xl shadow-lg hover:bg-[#FFDDE0] transition duration-300">
+      Get Started Now
+    </a>
+  </div>
+
+  <!-- Canvas Script remains unchanged -->
+  <script>
+    const canvas = document.getElementById('pricingCanvas');
+    const ctx = canvas.getContext('2d');
+    function resize() { canvas.width = canvas.offsetWidth; canvas.height = canvas.offsetHeight; }
+    window.addEventListener('resize', resize); resize();
+    let circles = [];
+    function init() {
+      circles = Array.from({ length: 20 }).map(() => ({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*30+10,
+        vx: (Math.random()-0.5)*0.2, // reduced speed
+        vy: (Math.random()-0.5)*0.2, // reduced speed
+        alpha: Math.random()*0.3+0.1
+      }));
+    }
+    function animate() {
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      circles.forEach(c => {
+        c.x += c.vx; c.y += c.vy;
+        if(c.x< -c.r) c.x=canvas.width+c.r; if(c.x>canvas.width+c.r) c.x=-c.r;
+        if(c.y< -c.r) c.y=canvas.height+c.r; if(c.y>canvas.height+c.r) c.y=-c.r;
+        ctx.beginPath(); ctx.arc(c.x, c.y, c.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(255,255,255,${c.alpha})`; ctx.fill();
+      });
+      requestAnimationFrame(animate);
+    }
+    init(); animate();
+  </script>
+
+  <!-- Wave Bottom Separator into Light Section -->
+  <svg class="w-full absolute bottom-0" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,0 C480,100 960,-100 1440,0 L1440,100 L0,100 Z" fill="#ffffff" /></svg>
+</section>
+
+<!-- "Social Proof" Section: Grid background + subtle separator -->
+<section id="social-proof" class="relative py-24 bg-white text-[#2D2D2D] overflow-hidden">
+  <!-- Grid Background + Floating Shapes -->
+  <div class="absolute inset-0 z-0">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="socialGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#socialGrid)" />
+    </svg>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-10 left-10 w-56 h-56 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-5xl mx-auto px-6 relative z-10 text-center">
+    <h2 class="text-4xl font-serif font-extrabold mb-4 text-[#AF222A]">Trusted by 500+ Entrepreneurs</h2>
+    <p class="text-lg mb-8">Join the growing community of founders who’ve eliminated safety headaches.</p>
+    <div class="flex justify-center mb-8">
+      <img src="https://cdn-icons-png.flaticon.com/512/179/179309.png" alt="Quote" class="w-12 opacity-20" />
+    </div>
+    <a href="#" class="inline-block px-8 py-3 bg-[#AF222A] text-white font-semibold rounded-xl shadow-lg hover:bg-[#911a22] transition duration-300">
+      Protect My Business Now
+    </a>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Upgraded Sections for Tutela Impresa -->
+<!-- Premium visuals, brand-consistent styling, elegant layout -->
+<!-- All changes follow #AF222A as the primary color with consistent tone, typography and advanced UI feel -->
+
+<!-- 11. Final Promise -->
+
+
+<!-- 11. Final Promise: Fully Restyled 5-Column Interactive Section -->
+<section id="final-promise" class="relative h-[750px] bg-white text-white overflow-hidden">
+  <style>
+    .promise-container {
+      display: flex;
+      height: 100%;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    }
+    .promise-column {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      transition: flex 0.5s ease;
+      cursor: pointer;
+    }
+    .promise-column:hover {
+      flex: 3;
+    }
+    .image-wrapper {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .promise-column:hover .image-wrapper img {
+      transform: scale(1.03);
+    }
+    .promise-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.1));
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    .promise-column:hover .promise-overlay {
+      opacity: 1;
+    }
+    .promise-overlay h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .promise-overlay p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      max-width: 90%;
+    }
+  </style>
+  <div class="absolute top-0 left-0 w-full text-center py-6 bg-[#AF222A] z-20">
+    <h2 class="text-4xl font-serif font-extrabold tracking-wide">Forget About the Risks</h2>
+    <p class="uppercase text-xl font-bold tracking-wide">Of Non-Conformities</p>
+  </div>
+  <div class="promise-container mt-32">
+    <div class="promise-column">
+      <div class="image-wrapper">
+        <img src="images/f1 (1).png" alt="Sanctions">
+      </div>
+      <div class="promise-overlay">
+        <h3>Sanctions</h3>
+        <p>Failure to comply with regulations can cost you dearly: fines that drain resources. We help you stay protected.</p>
+      </div>
+    </div>
+    <div class="promise-column">
+      <div class="image-wrapper">
+        <img src="images/f2 (1).png" alt="Criminal Liability">
+      </div>
+      <div class="promise-overlay">
+        <h3>Criminal Liability</h3>
+        <p>Italian law includes criminal charges for workplace safety failures. We help you comply confidently.</p>
+      </div>
+    </div>
+    <div class="promise-column">
+      <div class="image-wrapper">
+        <img src="images/f3 (1).png" alt="Missing Documents">
+      </div>
+      <div class="promise-overlay">
+        <h3>Document Gaps</h3>
+        <p>Missing or outdated documents cause instant non-compliance. We keep everything up to date.</p>
+      </div>
+    </div>
+    <div class="promise-column">
+      <div class="image-wrapper">
+        <img src="images/f4 (1).png" alt="Surprise Inspections">
+      </div>
+      <div class="promise-overlay">
+        <h3>Surprise Inspections</h3>
+        <p>Authorities inspect unannounced. We make sure you’re always ready, with zero stress.</p>
+      </div>
+    </div>
+    <div class="promise-column">
+      <div class="image-wrapper">
+        <img src="images/f6.png" alt="Reputation Damage">
+      </div>
+      <div class="promise-overlay">
+        <h3>Reputation Damage</h3>
+        <p>Non-compliance hurts how clients and partners see you. Stay respected, stay protected.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- 12. Why It’s Not the Accountant’s Job -->
+<!-- 12. Why It’s Not the Accountant’s Job -->
+<section id="wrong-people" class="relative py-36 bg-white text-[#2D2D2D] overflow-hidden">
+  <style>
+    .wrong-people-icon {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .wrong-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2.5rem 1.75rem;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.07);
+      transition: all 0.4s ease-in-out;
+      position: relative;
+      overflow: hidden;
+    }
+    .wrong-card:hover {
+      box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+      transform: translateY(-8px);
+    }
+    .wrong-card:hover .wrong-people-icon {
+      transform: scale(1.1);
+    }
+    .wrong-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      width: 100%;
+      background: #AF222A;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .wrong-card:hover::after {
+      opacity: 1;
+    }
+    .wrong-card h3 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #AF222A;
+      margin-bottom: 0.5rem;
+    }
+    .wrong-card p {
+      font-size: 0.95rem;
+      color: #4B4B4B;
+      line-height: 1.5;
+    }
+  </style>
+
+  <!-- Background visuals -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-[#AF222A]/10 rounded-full blur-[100px] animate-float"></div>
+    <div class="absolute bottom-10 left-10 w-56 h-56 bg-[#AF222A]/5 rounded-full blur-[80px] animate-float-slow"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <h2 class="text-5xl font-serif font-extrabold text-center mb-16 text-[#AF222A]">
+      Don’t Rely on the Wrong People
+      <div class="w-24 h-1 bg-[#AF222A] mx-auto mt-4 rounded-full"></div>
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div class="wrong-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3106/3106794.png" alt="Accountant" class="wrong-people-icon mx-auto" />
+        <h3>Accountants</h3>
+        <p>Experts in finance — not trained in safety law or compliance.</p>
+      </div>
+      <div class="wrong-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Consultant" class="wrong-people-icon mx-auto" />
+        <h3>Consultants</h3>
+        <p>Great with HR or payroll — but they don’t cover legal liability.</p>
+      </div>
+      <div class="wrong-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/681/681494.png" alt="Lawyer" class="wrong-people-icon mx-auto" />
+        <h3>Lawyers</h3>
+        <p>Legal pros — but not set up to manage safety certifications or deadlines.</p>
+      </div>
+      <div class="wrong-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2950/2950591.png" alt="Trade Association" class="wrong-people-icon mx-auto" />
+        <h3>Trade Associations</h3>
+        <p>Helpful — but too general to offer precise safety support.</p>
+      </div>
+    </div>
+    <div class="text-center mt-16">
+      <a href="#register" class="inline-block px-8 py-4 bg-[#AF222A] text-white font-semibold rounded-full shadow-md hover:bg-[#911a22] transition duration-300">
+        Work with professionals who do
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<svg class="w-full" viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0,100 L1440,0 L1440,100 Z" fill="#ffffff" /></svg>
+
+
+<!-- 13. Benefits You’ll Feel Daily -->
+<section id="daily-benefits" class="relative py-32 bg-white text-[#2D2D2D] text-center overflow-hidden">
+  <style>
+    .benefit-card {
+      padding: 2rem 1.5rem;
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .benefit-card img {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 1rem;
+    }
+  </style>
+
+  <!-- Background visuals -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute top-0 left-10 w-72 h-72 bg-[#AF222A]/10 rounded-full blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-10 w-56 h-56 bg-[#AF222A]/5 rounded-full blur-[80px] animate-pulse"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl font-serif font-extrabold mb-14 text-[#AF222A]">
+      Enjoy Your Business Again
+      <div class="w-20 h-1 bg-[#AF222A] mx-auto mt-4 rounded-full"></div>
+    </h2>
+    <div class="grid sm:grid-cols-3 gap-10">
+      <div class="benefit-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/1040/1040246.png" alt="Projects">
+        <p class="font-bold text-lg text-[#AF222A]">More Time for Projects</p>
+        <p class="text-sm text-gray-600">Focus on what moves your business forward.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Peace of Mind">
+        <p class="font-bold text-lg text-[#AF222A]">Peace of Mind</p>
+        <p class="text-sm text-gray-600">No more worrying about compliance surprises.</p>
+      </div>
+      <div class="benefit-card">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Freedom">
+        <p class="font-bold text-lg text-[#AF222A]">Freedom from Stress</p>
+        <p class="text-sm text-gray-600">Delegate the headache, reclaim your clarity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- 14. Client Testimonials -->
+<section id="testimonials" class="relative py-32 bg-[#F9F9F9] text-[#2D2D2D] text-center overflow-hidden">
+  <!-- Section Divider Top -->
+  <svg class="absolute top-0 left-0 w-full h-16 z-0" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,60 L1440,0 L1440,60 Z" fill="#ffffff" />
+  </svg>
+
+  <!-- Background visuals -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <svg class="absolute left-0 top-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 1000 1000">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#AF222A" stroke-width="1" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute top-10 right-10 w-72 h-72 bg-[#AF222A]/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-10 left-10 w-56 h-56 bg-[#AF222A]/5 rounded-full blur-[100px] animate-pulse"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <h2 class="text-4xl font-serif font-extrabold mb-14 text-[#AF222A]">
+      What Our Clients Say
+      <div class="w-20 h-1 bg-[#AF222A] mx-auto mt-4 rounded-full"></div>
+    </h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="Mark">
+        <p class="font-semibold">Mark Bernardi</p>
+        <p class="text-sm text-gray-600">Merchant (Veneto)</p>
+        <p class="mt-2 text-sm italic">"Tutela Impresa freed me from insecurity when facing Italian regulations."</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="Luca">
+        <p class="font-semibold">Luca DeStefani</p>
+        <p class="text-sm text-gray-600">Entrepreneur (Tuscany)</p>
+        <p class="mt-2 text-sm italic">"I have more time to focus on business while they monitor everything."</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+        <img src="https://randomuser.me/api/portraits/women/50.jpg" class="w-16 h-16 rounded-full mx-auto mb-4" alt="Annalisa">
+        <p class="font-semibold">Annalisa Green</p>
+        <p class="text-sm text-gray-600">Director (Cagliari)</p>
+        <p class="mt-2 text-sm italic">"Their professionals are always clear and competent — love the support!"</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Divider Bottom -->
+  <svg class="absolute top-0 left-0 w-full h-12 z-10" viewBox="0 0 1440 60" preserveAspectRatio="none">
+  <path d="M0,0 L1440,60 L1440,0 Z" fill="#ffffff" />
+</svg>
+</section>
+
+
+
+
+<!-- 15. Final CTA & Registration Form -->
+<section id="register-now" class="relative py-32 bg-[#AF222A] text-white overflow-hidden">
+  <svg class="absolute top-0 left-0 w-full h-12 z-10" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,60 L1440,0 L1440,60 Z" fill="#ffffff" />
+  </svg>
+
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <div class="absolute top-10 left-10 w-96 h-96 bg-white/10 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-10 w-72 h-72 bg-white/5 rounded-full blur-[100px] animate-pulse"></div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+    <h2 class="text-4xl font-serif font-extrabold mb-6">Register Now for Total Safety</h2>
+    <p class="text-lg mb-8 text-white/90">Start your journey to full business protection — it’s fast, easy and free.</p>
+    <form class="grid gap-4 md:grid-cols-2">
+      <input type="text" placeholder="Full Name" class="p-3 rounded text-[#AF222A]" />
+      <input type="email" placeholder="Email Address" class="p-3 rounded text-[#AF222A]" />
+      <input type="tel" placeholder="Phone Number" class="p-3 rounded text-[#AF222A] md:col-span-2" />
+      <button type="submit" class="md:col-span-2 bg-white text-[#AF222A] font-semibold py-3 rounded hover:bg-gray-100 transition duration-300">
+        Get Protected Now
+      </button>
+    </form>
+  </div>
+
+  <svg class="absolute bottom-0 left-0 w-full h-12 z-10" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 L1440,60 L0,60 Z" fill="#ffffff" />
+  </svg>
+</section>
+
+<footer class="bg-[#AF222A] text-white pt-16 pb-12 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+    <!-- Left: Logo & Identity -->
+    <div class="flex flex-col items-start gap-4">
+      <img src="/images/tutela-logo.png" alt="Tutela Impresa Logo" class="h-10 w-auto">
+      <p class="text-sm text-white/80 max-w-xs">
+        Tutela Impresa is your partner in legal and workplace safety compliance — from documents to audits.
+      </p>
+    </div>
+
+    <!-- Middle: Contact Info -->
+    <div class="space-y-3 text-sm">
+      <div class="flex items-center gap-3">
+        <span class="text-lg">📞</span>
+        <span>02.30316594</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-lg">🏢</span>
+        <span>Ferrari Service Srl</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-lg">📍</span>
+        <span>via Manin 176, 31015 Conegliano TV</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="text-lg">✉️</span>
+        <span>ferrariservice@tutela-impresa.com</span>
+      </div>
+    </div>
+
+    <!-- Right: Legal + Social -->
+    <div class="flex flex-col gap-4 md:items-end text-sm text-white/80">
+      <div class="flex gap-4 text-xl">
+        <a href="#" aria-label="Facebook" class="hover:text-white">📘</a>
+        <a href="#" aria-label="Instagram" class="hover:text-white">📸</a>
+      </div>
+      <div class="mt-4 text-right">
+        <p>Ferrari Service Srl | P.IVA 03615110263</p>
+        <p class="text-white mt-1">&copy; 2025 All Rights Reserved</p>
+        <p class="mt-1">Privacy & Legal • Terms of Use • Cookies</p>
+      </div>
+    </div>
+  </div>
+  <!-- Bottom divider -->
+  <svg class="absolute bottom-0 left-0 w-full h-12" viewBox="0 0 1440 60" preserveAspectRatio="none">
+    <path d="M0,0 L1440,60 L0,60 Z" fill="#ffffff" />
+  </svg>
+</footer>
+</body>
+</html>
